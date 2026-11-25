@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>FitFlow — Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="logo">✦</span><div><h1>FitFlow</h1><p>Your daily wellness companion</p></div></div>
+      <span class="date" id="today"></span>
+    </header>
+
+    <section class="hero">
+      <div><span class="eyebrow">SMALL STEPS. STRONG HABITS.</span><h2>Make today count.</h2>
+      <p>Track your movement, hydration and daily habits.<br>Progress at your own pace — consistency over perfection.</p></div>
+      <div class="hero-icon">🏃‍♀️</div>
+    </section>
+
+    <section class="stats">
+      <article class="card stat"><div class="stat-head">Steps <span>👟</span></div><strong id="stepsValue">0</strong><small>Goal: 6,000 steps</small><div class="bar"><i id="stepsBar"></i></div></article>
+      <article class="card stat"><div class="stat-head">Active minutes <span>⏱️</span></div><strong id="minutesValue">0</strong><small>Goal: 30 minutes</small><div class="bar"><i id="minutesBar"></i></div></article>
+      <article class="card stat"><div class="stat-head">Water <span>💧</span></div><strong id="waterValue">0 / 8</strong><small>Glasses today</small><div class="bar"><i id="waterBar"></i></div></article>
+      <article class="card stat"><div class="stat-head">Workouts <span>🔥</span></div><strong id="workoutValue">0</strong><small>Activities logged today</small><div class="bar"><i id="workoutBar"></i></div></article>
+    </section>
+
+    <section class="columns">
+      <article class="card">
+        <h3>Today's movement</h3>
+        <div class="goal-row"><div class="ring" id="goalRing"><b id="ringText">0%</b></div><p><strong>You're building momentum!</strong><br><small>Add your steps and active minutes. Any amount of movement counts.</small></p></div>
+        <form class="entry" id="stepsForm"><input id="stepsInput" type="number" min="1" placeholder="Add steps" aria-label="Add steps"><button>Add</button></form>
+        <form class="entry" id="minutesForm"><input id="minutesInput" type="number" min="1" placeholder="Active minutes" aria-label="Active minutes"><button class="secondary">Add</button></form>
+      </article>
+
+      <article class="card">
+        <h3>Hydration tracker 💧</h3><div class="water-head"><small>Daily water glasses</small><b id="waterCount">0/8</b></div>
+        <div class="glasses" id="glasses" aria-label="Water progress"></div>
+        <div class="actions"><button id="addWater">+ Add a glass</button><button class="secondary" id="undoWater">Undo</button></div>
+        <small class="note">Hydration needs vary with weather and activity.</small>
+      </article>
+
+      <article class="card">
+        <h3>Log an activity 🏋️</h3>
+        <form id="activityForm">
+          <select id="activityType" aria-label="Activity type"><option>Walking</option><option>Running</option><option>Cycling</option><option>Yoga</option><option>Dance</option><option>Stretching</option><option>Sports</option><option>Other</option></select>
+          <div class="entry"><input id="activityDuration" type="number" min="1" placeholder="Duration (minutes)" aria-label="Duration in minutes"><button>Save</button></div>
+        </form>
+        <div class="activity-list" id="activityList"><p class="empty">No activities logged yet. Add your first one!</p></div>
+      </article>
+
+      <article class="card">
+        <h3>Daily healthy habits</h3>
+        <label class="habit">🌤️ Get some fresh air <input type="checkbox" class="habit-check"></label>
+        <label class="habit">🧘 Take a stretch break <input type="checkbox" class="habit-check"></label>
+        <label class="habit">🥗 Eat regular balanced meals <input type="checkbox" class="habit-check"></label>
+        <label class="habit">🌙 Get enough rest <input type="checkbox" class="habit-check"></label>
+        <small class="note">A gentle checklist — no streak pressure.</small>
+      </article>
+    </section>
+    <footer>FITFLOW · Built with HTML, CSS & JavaScript · Your data stays on this device</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
